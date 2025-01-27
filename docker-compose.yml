@@ -1,0 +1,26 @@
+services:
+  trenning_notificationsexample:
+    image: ${DOCKER_REGISTRY-}trenningnotificationsexample
+    build:
+      context: .
+      dockerfile: Trenning_NotificationsExample\Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:            
+      - ASPNETCORE_ENVIRONMENT=Development         
+    depends_on:
+      - mongodb
+  mongodb:
+    container_name: mongodb
+    image: mongo:8.0.4
+    ports:
+      - 27017:27017    
+    volumes:
+      - ./mongo-data:/data/db 
+    environment:   
+      MONGO_INITDB_DATABASE: Passports
+
+volumes:
+  mongodb:
+    
