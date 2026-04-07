@@ -11,7 +11,7 @@
       "applicationUrl": "http://localhost:5027"
     },
     "https": {
-      "commandName": "Project",
+      "commandName": "Project", 
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
